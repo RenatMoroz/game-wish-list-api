@@ -1,10 +1,12 @@
-service: aws-node-express-api
+service: game-wish-list-api
 
 frameworkVersion: '4'
 
 provider:
   name: aws
   runtime: nodejs22.x
+  # profile: defaultUser
+  # region: eu-central-1
 
 custom:
   prune: # автоматичне видалення старих версій
