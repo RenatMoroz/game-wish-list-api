@@ -47,7 +47,7 @@ export const updateGameWishListCategory = async (
   userId: Types.ObjectId,
   body: UpdateCategory,
 ) => {
-  const category = await CategoryCollection.findByIdAndUpdate({
+  const category = await CategoryCollection.findOne({
     _id: categoryId,
     userId: userId.toString(),
   });

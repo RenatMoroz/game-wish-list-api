@@ -12,7 +12,7 @@ export const getItemCategory = async (
   userId: Types.ObjectId,
 ) => {
   const query: GetItemsParams = {
-    userId: userId._id.toString(),
+    userId: userId.toString(),
   };
   if (params.title) {
     query.title = params.title;
@@ -55,7 +55,7 @@ export const updateItemCategory = async (
   userId: Types.ObjectId,
   body: UpdateItem,
 ) => {
-  const item = await ItemCollection.findOneAndUpdate({
+  const item = await ItemCollection.findOne({
     _id: itemCategoryId,
     userId: userId._id.toString(),
   });
